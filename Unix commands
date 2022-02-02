@@ -1,1 +1,38 @@
+PWD
+Prints the current working directory
+LS
+Prints the files and folders in the current directory
+CD
+Changes folder to the specified folder i.e. ‘cd folder_name’
+MKDIR
+Creates a new directory i.e. ‘mkdir folder_name’
+RM
+Deletes a file or folder i.e. ’rm file_name’ or ‘rm -rf folder_name’
+CAT
+Prints the contents of a file i.e. ‘cat file_name’
+ECHO
+Prints the contents of a variable i.e. ‘echo $PATH’
+CP
+Copies a file or folder i.e. ‘cp file_name copy_file_name’
+MV
+Moves a file or folder i.e. ‘mv file_name new_file_name’
+CHMOD
+Changes the access permissions of a file or folder i.e. ‘chmod 0777 file_name’
+CHOWN
+Changes the owner of a file i.e. ‘chown user:group file_name’
+WHICH
+Prints the file location of a binary i.e. ‘which cat’
+ENV
+Prints a list of environment variables
+FIND
+Searches for a file or folder and prints matches i.e. ‘find / -name file_name’
+SUDO
+Executes the command following as a root user i.e. ‘sudo mkdir /root/folder_name’
+SU
+Changes your user to root or any other user when followed by a username.
+WHOAMI
+Prints your username.
+HISTORY
+List of all recent commands
+
 
