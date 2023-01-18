@@ -1,0 +1,13 @@
+{
+	"SETTINGS" : {
+        "port" : "8024",
+        "path" : "/",
+        "sourcedir" : "images",
+        "targetdir" : "",
+        "imgtype" : "jpg"
+    },
+    "ALPRService" : {
+        "url" : "http://masterpi.local:8026",
+        "port" : "8026"
+    }
+}

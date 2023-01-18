@@ -1,0 +1,60 @@
+{
+	"SETTINGS" : {
+        "port" : "8025",
+		"path" : "/"
+	},
+	"GPIOS" : {
+		"btn_gates" : {
+			"type" : "button",
+			"name" : "Gates",
+			"id" : 4,
+			"mode" : "out",
+			"dynamic_state" : 0,
+			"state" : 0,
+			"monitor" : "",
+			"state_text" : [ 
+				"",""
+				],
+			"timer" : 1000
+		},
+		"btn_garage" : {
+			"type" : "button",
+			"name" : "Garage",
+			"id" : 17,
+			"mode" : "out",
+			"dynamic_state" : 1,
+			"state" : "",
+			"monitor" : "read_garage",
+			"state_text" : [ 
+				"",""
+				],
+			"timer" : 1000
+		},
+		"read_garage" : {
+			"type" : "monitor",
+			"name" : "Gate Switch",
+			"id" : 27,
+			"mode" : "in",
+			"dynamic_state" : 1,
+			"state" : "",
+			"monitor" : "btn_garage",
+			"state_text" : [ 
+				"Close Garage Door","Open Garage Door"
+				],
+			"timer" : 0
+		},
+		"motion" : {
+			"type" : "monitor",
+			"name" : "Motion",
+			"id" :22,
+			"mode" : "in",
+			"dynamic_state" : 1,
+			"state" : "",
+			"monitor" : "",
+			"state_text" : [ 
+				"",""
+				],
+			"timer" : 0
+		}
+	}
+}

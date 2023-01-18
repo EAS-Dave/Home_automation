@@ -1,0 +1,56 @@
+{
+	"GPIOS" : [
+			{
+			"type" : "button",
+			"name" : "Gates",
+			"id" : 18,
+			"mode" : "out",
+			"dynamic_state" : 0,
+			"state" : 0,
+			"monitor" : "Gate_Switch",
+			"state_text" : [ 
+				"",""
+				],
+			"timer" : 1000
+		},
+		{
+			"type" : "button",
+			"name" : "Garage",
+			"id" : 17,
+			"mode" : "out",
+			"dynamic_state" : 1,
+			"state" : "",
+			"monitor" : "read_garage",
+			"state_text" : [ 
+				"",""
+				],
+			"timer" : 1000
+		},
+		{
+			"type" : "monitor",
+			"name" : "Gate_Switch",
+			"id" : 18,
+			"mode" : "in",
+			"dynamic_state" : 1,
+			"state" : "",
+			"monitor" : "",
+			"state_text" : [ 
+				"Close Garage Door","Open Garage Door"
+				],
+			"timer" : 0
+		},
+		{
+			"type" : "monitor",
+			"name" : "Motion",
+			"id" :22,
+			"mode" : "in",
+			"dynamic_state" : 1,
+			"state" : "",
+			"monitor" : "",
+			"state_text" : [ 
+				"",""
+				],
+			"timer" : 0
+		}
+	]
+}

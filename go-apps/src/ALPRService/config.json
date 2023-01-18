@@ -1,0 +1,44 @@
+{
+	"SETTINGS" : {
+        "port" : "8026",
+		"path" : "/",
+		"NOTIFICATION" : {
+			"approved" : 1,
+			"not_approved" : 1
+		},
+		"ALPR_CLOUD" : {
+			"url" : "https://api.openalpr.com/v2/recognize",
+			"secret_key" : "sk_996318b899de62ac6027e5fc",
+			"recognize_vehicle" : 1,
+			"country" : "EU",
+			"return_image" : 0,
+			"Topn" : 10,
+			"state" : "GB",
+			"image_path" : "images/"
+		  },
+		"SWITCH_HUB" : {
+			"url" : "http://192.168.8.192",
+			"port" : "8025"
+		}
+    },
+    "REG_NOs" : {
+		"R278 USP" : {
+			"name" : "David",
+			"vehicle" : "Land Rover 110",
+			"open_gate" : 0,
+			"notify" : 0
+		},
+		"AD07 USP" : {
+			"name" : "Emma",
+			"vehicle" : "Passat",
+			"open_gate" : 0,
+			"notify" : 0
+		},
+		"F838 FPW" : {
+			"name" : "David",
+			"vehicle" : "Cobra",
+			"open_gate" : 1,
+			"notify" : 0
+		}
+	}
+}

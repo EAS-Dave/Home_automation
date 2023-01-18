@@ -1,0 +1,70 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+<script>
+    function onLoad(){
+        $.ajax({
+            url: "/server",
+            data: {"MODE" : "LOAD"},
+            type: "POST",
+            dataType: "json",
+            success: function(data){
+                var rOw = "";
+                $.each(data, function(i, f) {
+                    var sTate_txt = "";
+                    if (f.type == "button" && f.dynamic_state == 1){
+                        var readgpio = f.monitor;
+                        var monitorstate = data[readgpio].state;
+                        sTate_txt = data[readgpio].state_text[monitorstate];
+                        //alert(sTate_txt);
+                        rOw = rOw + "<button id=" + i + " class=" + i + " onclick='sendData(this.id,1)'>" + sTate_txt + "</button><br><br>";
+                    }
+                    if (f.type == "button" && f.dynamic_state == 0){
+                        rOw = rOw + "<button id=" + i + " class=" + i + " onclick='sendData(this.id,1)'>" + f.name+ "</button><br><br>";
+                    }
+                    document.getElementById("page_load").innerHTML = rOw;
+                });
+            },
+            error: function(){
+            }
+        });
+    }
+
+    function sendData(gpio, value){
+        $.ajax({
+            url: "web/server",
+            data: {"MODE" : "SET", "GPIO" : gpio, "VALUE" : value},
+            type: "POST",
+            dataType: "json",
+            success: function(data){
+            },
+            error: function(){
+            }
+        });
+    }
+    function loadImage(){
+        $.ajax({
+            url: "http://192.168.1.148:8024/",
+            //url: "web/img",
+            data: {"MODE" : "IMAGE"},
+            type: "POST",
+            dataType: "json",
+            success: function(data){
+                var returnval = "hello";
+                //returnval = data;
+                //document.getElementById("lastreg").innerHTML = returnval;
+            },
+            error: function(xhr, textStatus, error){
+                alert(xhr.statusText + "|" + textStatus + "|" + error);
+            }
+        });
+    }
+
+</script>
+
+<HTML>
+    <body onload='onLoad()'>
+        <div class="page_load" id="page_load"></div>
+        <button id="loadimage" class="loadimage" onclick='loadImage();'> Load Last Vehicle Data </button> <label id="lastreg" class="lastreg"></label>
+    </body>
+</HTML>
